@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flydea</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- Bootstrap core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+        <!-- Custom fonts for this template -->
+        <!--<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>-->
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link rel="shortcut icon" href="img/favicon.ico" length = 16px width = 16px>
+        <!-- Plugin CSS -->
+        <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="css/creative.css" rel="stylesheet">
+        
+    </head>
+    <body id="page-top">
+        
+        <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">flydea</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">Add Post</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="all_posts.erb">All Posts</a>
+            </li>
+            <li class="nav-item"> 
+            
+              <form method = "POST" action = "/results">
+                <input type = "text1" name = "search" >
+                <input type = "submit" value = "Search" class = "btn btn-default">
+              </form>
+              <!--<a class="nav-link js-scl-trigger" href="#portfolio"></a>-->
+              <!--<form method="POST" action="/results">-->
+                <!--<h4 style="color:black !important">Search</h4>-->
+              <!--  <input type="text1" name="search">-->
+              <!--  <input type="submit" class = "btn btn-default">-->
+              <!--</form>-->
+              <!--<input type="text1" name="search" placeholder="Search..." class = "form-control" />-->
+              
+
+            </li>
+            <li >
+              <p><%= @output %></p>
+            </li>
+            <!--<li class="nav-item">-->
+            <!--  <a href="results.erb" ><img src ="img/search.png" width = 32px height = 32px /></a>-->
+            <!--</li>-->
+            <!--<li class="nav-item">-->
+            <!--  <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>-->
+            <!--</li>-->
+          </ul>
+        </div>
+      </div>
+    </nav>
+        
+        <header class="masthead">
+        
+        
+      <div class="header-content">
+        <div class="header-content-inner">
+          <img src = "img/logo.svg">
+          <h1 id="homeHeading">FLYDEA</h1>
+          <hr>
+          <p>Have a thought you want to quickly jot down somewhere? Looking for inspiration for an upcoming project? Check it out!</p>
+          <!--<a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>-->
+        </div>
+      </div>
+    </header>
+    
+    <section class="bg-primary" id="addpost">
+      <!--<div class="container">
+        <div class="row">
+          <div class = "col-sm-4 mx-auto"></div>-->
+          <!--<div class="col-sm-4 mx-auto">-->
+            <!--<h2 class="section-heading text-white">We've got what you need!</h2>
+            <hr class="light">
+            <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
+            <a class="btn btn-default btn-xl js-scroll-trigger" href="#services">Get Started!</a> -->
+            <form  class = "form-horizontal" method="post" action="/post">
+              <div class = "pic">
+                <img src ="img/decor.png">
+                </div>
+            <div class = "col-sm-4 text-center">
+              <div class = "addpost">
+                <h2>Add Post</h2></div>
+        
+                
+              <div class = "form-group">
+                <label class="control-label col-sm-2" for="category">Category: </label>
+                 <div class = "col-sm-10">
+                   <input type="text" name="category" class = "form-control" />
+                 </div>
+              </div>
+              <div class = "form-group">
+                <label class="control-label col-sm-2" for="idea">Idea: </label>
+                 <div class = "col-sm-10">
+                   <input type="text" name="idea" class = "form-control" />
+                 </div>
+               </div>
+               <div class = "form-group">
+                <label class="control-label col-sm-2" for="first_name">First Name: </label>
+                <div class = "col-sm-10">
+                   <input type="text" name="first_name" class = "form-control" />
+                 </div>
+               </div>
+               <div class = "form-group">
+                <label class="control-label col-sm-2" for="idea">Last Name: </label>
+                 <div class = "col-sm-10">
+                 <input type="text" name="last_name" class = "form-control" />
+                 </div>
+               </div>
+               <div class = "form-group">
+               <input type ="submit" value="Add Post" />
+               </div>
+               
+            </form>
+            </div>
+                      <!--<div class = "col-sm-4 mx-auto"></div>-->
+        
+    </section>
+
+    
+    </body>
+
+       
+</html>

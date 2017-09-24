@@ -1,0 +1,53 @@
+<!-- views/post_page.erb -->
+<html>
+    <head>
+        <title>Idea App</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- Bootstrap core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+        <!-- Custom fonts for this template -->
+        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+        <!-- Plugin CSS -->
+        <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="css/creative.css" rel="stylesheet">
+        
+    </head>
+<h2><%= @post.category %></h2>
+<p>Created: <%= @post.created_at %></p>
+<p><%= @post.idea %></p>
+<p>First name: <%= @post.first_name%></p>
+<p>Last name: <%= @post.last_name%></p>
+<p> Tags: <%= @post.tags%></p>
+<form method = "post" action = "/like">
+    <input type ="submit" value="Like">
+</form>
+<input type ="submit" value="Add Post">
+<!--<a href="/post/<%= @post.id %>" name="_method" value="delete">Delete Post</a>-->
+<h2>All Posts</h2>
+    <ul>
+    <% @posts = Post.all %>
+    <% @posts.each do |post| %>
+        <li>
+           <a href="/post/<%= post.id %>"><%= post.category %></a> | <%= post.created_at %>
+        </li>
+    <% end %>
+    </ul>
+</html>
+<!--<h2>Edit Post</h2>-->
+<!--<form method="post" action="/post/<%= @post.id %>"> -->
+<!--    <input type="hidden" name="_method" value="put">-->
+<!--    <input type="text" name="category" value="<%= @post.category %>">-->
+<!--    <input type="text" name="idea" value="<%= @post.idea %>">-->
+<!--    <button type="submit">Update Post</button>-->
+<!--</form>-->
